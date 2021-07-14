@@ -1,4 +1,5 @@
 ﻿using OopLoggingSystem.Library;
+using OopLoggingSystem.Library.Factories;
 using System;
 
 namespace OopLoggingSystem
@@ -7,7 +8,9 @@ namespace OopLoggingSystem
     {
         static void Main(string[] args)
         {
-            ApplicationLog.Initialize(new ConsoleLogger());
+            //Step1
+            ApplicationLog.Initialize(LoggerType.Console);
+            
             int nrOfElements = ReadNumber("Please specify the number of elements", 3);
             if (nrOfElements < 0)
             {

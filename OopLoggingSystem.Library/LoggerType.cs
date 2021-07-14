@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace OopLoggingSystem.Library
 {
-    public abstract class Logger
+    public enum  LoggerType
     {
-        public abstract void Write(Severity severity, string message);
+        Console=0,
+        Debug,
+        FileSystem
     }
 }
