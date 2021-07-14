@@ -10,10 +10,7 @@ namespace OopLoggingSystem.Library
     {
         public override void Write(Severity severity, string message)
         {
-            StringBuilder logEntryBuilder = new StringBuilder();
-            logEntryBuilder.AppendLine(new string('-', Console.WindowWidth - 1));
-            logEntryBuilder.AppendLine($"[{DateTime.Now:yyyy-MM-dd HH:mm:ss.fff}] [{severity}] : [{message}]");
-            logEntryBuilder.AppendLine(new string('-', Console.WindowWidth - 1));
+            var logEntryBuilder=LoggerFormatter.FormatLogger(severity, message);
 
             System.Diagnostics.Debug.WriteLine(logEntryBuilder.ToString());
         }
